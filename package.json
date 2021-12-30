@@ -1,0 +1,53 @@
+{
+  "name": "alfred-rename",
+  "version": "0.0.0",
+  "description": "Alfred workflow to rename files and folders via your clipboard",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "chrisspiegl/alfred-rename",
+  "author": {
+    "name": "Chris Spiegl",
+    "email": "chris@chrisspiegl.com",
+    "url": "https://chrisspiegl.com/"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup",
+    "cu": "ncu",
+    "cu:fix": "ncu -u",
+    "test": "xo --fix"
+  },
+  "files": [
+    "icon.png",
+    "info.plist",
+    "index.js",
+    "src"
+  ],
+  "keywords": [
+    "alfred",
+    "workflow",
+    "macos",
+    "mac",
+    "replace",
+    "templating",
+    "clipboard",
+    "filename",
+    "folder",
+    "folders"
+  ],
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.1.0",
+    "alfy": "^0.12.2",
+    "discover-path": "^1.0.0",
+    "pupa": "^3.1.0",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^12.0.5",
+    "xo": "^0.47.0"
+  }
+}
