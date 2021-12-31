@@ -2,10 +2,18 @@ import process from 'node:process';
 import path from 'node:path';
 import alfy from 'alfy';
 import pupa from 'pupa';
-import {findFilter, isFileAction, slugifyLine} from './src/utils.js';
+import {
+	filterOutput,
+	findFilter,
+	isFileActionCaseSensitive,
+	slugifyLine,
+} from './src/utils.js';
 
 const {inputWithoutFilter, foundFilter: filter} = findFilter(alfy.input);
-const input = inputWithoutFilter.replaceAll('\t', '\n');
+const input = inputWithoutFilter
+	.replaceAll('\t', '\n')
+	.split('\n')
+	.map(element => element.trim());
 const clipboard = process.env.text_to_add.trim();
 
 const options = [
@@ -38,61 +46,52 @@ const options = [
 ];
 
 function run(input) {
-	if (isFileAction(input)) {
-		return options.map(option => {
-			const files = input.split('\n').map(filepath => {
-				filepath = path.resolve(filepath);
-				const filenameBefore = path.basename(filepath);
-				const filenameAfter = option.action(filenameBefore, clipboard);
-				const filepathBefore = filepath;
-				const filepathAfter = path.resolve(path.dirname(filepath), filenameAfter);
-				return {
-					filenameBefore,
-					filenameAfter,
-					filepathBefore,
-					filepathAfter,
-				};
-			}).filter(element => element.filenameBefore !== element.filenameAfter);
-			return files.length > 0
-				? {
-					title: `${option.prefix}: ${files[0].filenameAfter}`,
-					subtitle: 'Copy to clipboard… Hold CMD Key to actually rename files.',
-					match: option.prefix,
-					valid: true,
-					arg: files.map(element => element.filenameAfter),
+	if (!isFileActionCaseSensitive(input)) {
+		return [
+			{
+				title: 'Input must be valid and existing file(s) or folder(s)',
+				valid: false,
+			},
+		];
+	}
 
-					variables: {
-						action: 'copy',
-					},
-					mods: {
-						cmd: {
-							subtitle: 'Actually rename files!',
-							arg: JSON.stringify(files),
-							variables: {
-								action: 'rename',
-							},
+	return options.map(option => {
+		const files = input.map(filepath => {
+			filepath = path.resolve(filepath);
+			const filenameBefore = path.basename(filepath);
+			const filenameAfter = option.action(filenameBefore, clipboard);
+			const filepathBefore = filepath;
+			const filepathAfter = path.resolve(path.dirname(filepath), filenameAfter);
+			return {
+				filenameBefore,
+				filenameAfter,
+				filepathBefore,
+				filepathAfter,
+			};
+		}).filter(element => element.filenameBefore !== element.filenameAfter);
+		return files.length > 0
+			? {
+				title: `${option.prefix}: ${files[0].filenameAfter}`,
+				subtitle: 'Copy to clipboard… Hold CMD Key to actually rename files.',
+				match: option.prefix,
+				valid: true,
+				arg: files.map(element => element.filenameAfter),
+
+				variables: {
+					action: 'copy',
+				},
+				mods: {
+					cmd: {
+						subtitle: 'Actually rename files!',
+						arg: JSON.stringify(files),
+						variables: {
+							action: 'rename',
 						},
 					},
-				}
-				: false;
-		}).filter(element => Boolean(element));
-	}
-
-	return [
-		{
-			title: 'Input must be valid and existing file(s) or folder(s)',
-			valid: false,
-		},
-	];
-}
-
-function filterOutput(filter, output) {
-	const filterSplit = filter.split(' ');
-	for (const filter of filterSplit) {
-		output = alfy.matches(filter, output, 'match');
-	}
-
-	return output;
+				},
+			}
+			: false;
+	}).filter(element => Boolean(element));
 }
 
 const output = run(input);
