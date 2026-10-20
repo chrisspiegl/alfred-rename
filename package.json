@@ -1,11 +1,11 @@
 {
-  "name": "alfred-rename",
+  "name": "alfred-transform",
   "version": "0.0.1",
-  "description": "Alfred workflow to rename files and folders via your clipboard",
+  "description": "Alfred workflow to transform CSV files between comma, semicolon, and tab delimiters.",
   "type": "module",
   "main": "index.js",
   "license": "MIT",
-  "repository": "chrisspiegl/alfred-rename",
+  "repository": "chrisspiegl/alfred-transform",
   "author": {
     "name": "Chris Spiegl",
     "email": "chris@chrisspiegl.com",
@@ -32,19 +32,18 @@
     "workflow",
     "macos",
     "mac",
-    "replace",
-    "templating",
-    "clipboard",
-    "filename",
-    "folder",
-    "folders"
+    "csv",
+    "tsv",
+    "delimiter",
+    "transform",
+    "comma",
+    "semicolon",
+    "tab",
+    "separator"
   ],
   "dependencies": {
-    "@sindresorhus/slugify": "^2.1.0",
     "alfy": "^0.12.2",
-    "discover-path": "^1.0.0",
-    "pupa": "^3.1.0",
-    "tslib": "^2.3.1"
+    "fast-csv": "^5.0.5"
   },
   "devDependencies": {
     "npm-check-updates": "^12.0.5",

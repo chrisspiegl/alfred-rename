@@ -1,6 +1,5 @@
 import alfy from 'alfy';
 import {discoverPathSync} from 'discover-path';
-import slugify from '@sindresorhus/slugify';
 
 export function isFileActionCaseSensitive(input) {
 	const filePaths = input
@@ -34,9 +33,6 @@ export function findFilter(input) {
 	};
 }
 
-export function slugifyLine(output) {
-	return slugify(output, {lowercase: false});
-}
 
 export function filterOutput(filter, output) {
 	const filterSplit = filter.split(' ');

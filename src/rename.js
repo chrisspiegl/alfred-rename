@@ -4,6 +4,8 @@ import {fileExistsWithCaseSync} from './utils.js';
 
 const inputArgs = JSON.parse(alfy.input);
 
+// console.log(inputArgs)
+
 for (const element of inputArgs) {
 	if (
 		fileExistsWithCaseSync(element.filepathBefore)
