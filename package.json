@@ -10,7 +10,14 @@
     "url": "https://chrisspiegl.com/"
   },
   "license": "MIT",
-  "repository": "chrisspiegl/alfred-rename",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisspiegl/alfred-rename.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisspiegl/alfred-rename/issues"
+  },
+  "homepage": "https://github.com/chrisspiegl/alfred-rename#readme",
   "keywords": [
     "alfred",
     "workflow",
