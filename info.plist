@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.chrisspiegl.alfred-csv-transform</string>
+	<string>com.chrisspiegl.alfred-rename</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BE19905A-A482-4FEE-84CB-983571FD1ECC</string>
+				<string>F60E6994-5DEF-4A1D-AB59-BC6B8508E0E2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +21,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</key>
+		<key>57937CD2-D5CE-4AFB-BF00-64BD7061B8E1</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -34,7 +34,33 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BE19905A-A482-4FEE-84CB-983571FD1ECC</key>
+		<key>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>57937CD2-D5CE-4AFB-BF00-64BD7061B8E1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>910B18BA-B114-4274-8324-C365EEBFC2D0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A9AB58CD-EAD1-4645-9AEB-AEB514901237</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -47,33 +73,77 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F60E6994-5DEF-4A1D-AB59-BC6B8508E0E2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A9AB58CD-EAD1-4645-9AEB-AEB514901237</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B98C0C96-8F7F-4B57-A892-4DF4691FAF81</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>910B18BA-B114-4274-8324-C365EEBFC2D0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8AADE78D-8FA7-486E-9B4C-1D3037586B61</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8D1E6B40-C5A2-4F79-B318-7E0A9C4D52B1</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Chris Spiegl</string>
 	<key>description</key>
-	<string></string>
+	<string>Alfred workflow to rename files and folders via your clipboard</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>alfred-csv-transform</string>
+	<string>alfred-rename</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
-				<integer>1</integer>
-				<key>filetypes</key>
-				<array/>
-				<key>name</key>
-				<string>Transform CSV File(s)</string>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</string>
+			<string>A9AB58CD-EAD1-4645-9AEB-AEB514901237</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -85,14 +155,31 @@
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string></string>
+				<string>Check and then try again.</string>
 				<key>title</key>
-				<string>Transformed</string>
+				<string>Copied rename preview to clipboard.</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>72D79816-B552-4F5A-A5F5-76E4DB667046</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>1</integer>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Rename File(s) via Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -111,8 +198,6 @@
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>127</integer>
-				<key>keyword</key>
-				<string>csvt</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -128,13 +213,13 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>test.sh</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Transform CSV File(s)</string>
+				<string>Rename File(s) via Clipboard</string>
 				<key>type</key>
-				<integer>11</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -148,67 +233,218 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>copy</string>
+						<key>outputlabel</key>
+						<string>Copy to Clipboard</string>
+						<key>uid</key>
+						<string>B98C0C96-8F7F-4B57-A892-4DF4691FAF81</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>rename</string>
+						<key>outputlabel</key>
+						<string>Actually Rename</string>
+						<key>uid</key>
+						<string>8AADE78D-8FA7-486E-9B4C-1D3037586B61</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F60E6994-5DEF-4A1D-AB59-BC6B8508E0E2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}
+</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>text_to_add</key>
+					<string>{clipboard:1}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>57937CD2-D5CE-4AFB-BF00-64BD7061B8E1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<string>./node_modules/.bin/run-node src/rename.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>11</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>BE19905A-A482-4FEE-84CB-983571FD1ECC</string>
+			<string>910B18BA-B114-4274-8324-C365EEBFC2D0</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>The selected files were renamed.</string>
+				<key>title</key>
+				<string>Renamed the Selected Files</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>renamed</string>
+						<key>outputlabel</key>
+						<string>Renamed</string>
+						<key>uid</key>
+						<string>8D1E6B40-C5A2-4F79-B318-7E0A9C4D52B1</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Skipped</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string>Alfred workflow to rename files and folders via your clipboard
 
-https://github.com/chrisspiegl/alfred-csv-transform</string>
+https://github.com/chrisspiegl/alfred-rename</string>
 	<key>uidata</key>
 	<dict>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
 		<dict>
 			<key>xpos</key>
-			<real>240</real>
+			<integer>240</integer>
 			<key>ypos</key>
-			<real>95</real>
+			<integer>95</integer>
+		</dict>
+		<key>57937CD2-D5CE-4AFB-BF00-64BD7061B8E1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>165</integer>
+			<key>ypos</key>
+			<integer>125</integer>
 		</dict>
 		<key>5D09B54E-2B88-4658-96A7-4FD82DEC69E5</key>
 		<dict>
 			<key>xpos</key>
-			<real>30</real>
+			<integer>10</integer>
 			<key>ypos</key>
-			<real>95</real>
+			<integer>95</integer>
 		</dict>
 		<key>72D79816-B552-4F5A-A5F5-76E4DB667046</key>
 		<dict>
 			<key>xpos</key>
-			<real>615</real>
+			<integer>780</integer>
 			<key>ypos</key>
-			<real>95</real>
+			<integer>10</integer>
 		</dict>
-		<key>BE19905A-A482-4FEE-84CB-983571FD1ECC</key>
+		<key>910B18BA-B114-4274-8324-C365EEBFC2D0</key>
+		<dict>
+			<key>note</key>
+			<string>Rename File(s)</string>
+			<key>xpos</key>
+			<integer>610</integer>
+			<key>ypos</key>
+			<integer>185</integer>
+		</dict>
+		<key>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</key>
 		<dict>
 			<key>xpos</key>
-			<real>435</real>
+			<integer>780</integer>
 			<key>ypos</key>
-			<real>95</real>
+			<integer>185</integer>
+		</dict>
+		<key>96D583BD-F244-4660-BD07-8F6BEF4ED277</key>
+		<dict>
+			<key>xpos</key>
+			<integer>980</integer>
+			<key>ypos</key>
+			<integer>185</integer>
+		</dict>
+		<key>A9AB58CD-EAD1-4645-9AEB-AEB514901237</key>
+		<dict>
+			<key>xpos</key>
+			<integer>605</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>F60E6994-5DEF-4A1D-AB59-BC6B8508E0E2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>100</integer>
 		</dict>
 	</dict>
-	<key>userconfigurationconfig</key>
-	<array/>
 	<key>version</key>
-	<string></string>
+	<string>0.0.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/chrisspiegl/alfred-rename</string>
 </dict>
 </plist>

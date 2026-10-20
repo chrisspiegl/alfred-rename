@@ -1,17 +1,6 @@
-import {renameSync} from 'node:fs';
-import alfy from 'alfy';
-import {fileExistsWithCaseSync} from './utils.js';
+import process from 'node:process'
+import alfy from 'alfy'
+import { renamePayload, resultToken } from './apply-rename.js'
 
-const inputArgs = JSON.parse(alfy.input);
-
-// console.log(inputArgs)
-
-for (const element of inputArgs) {
-	if (
-		fileExistsWithCaseSync(element.filepathBefore)
-    && !fileExistsWithCaseSync(element.filepathAfter)
-	) {
-		renameSync(element.filepathBefore, element.filepathAfter);
-	}
-}
-
+const renamedCount = renamePayload(alfy.input)
+process.stdout.write(resultToken(renamedCount))
