@@ -51,7 +51,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
+				<string>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -100,11 +100,26 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8D1E6B40-C5A2-4F79-B318-7E0A9C4D52B1</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Chris Spiegl</string>
 	<key>description</key>
-	<string></string>
+	<string>Alfred workflow to rename files and folders via your clipboard</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -313,7 +328,7 @@
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Slugified their names!</string>
+				<string>The selected files were renamed.</string>
 				<key>title</key>
 				<string>Renamed the Selected Files</string>
 			</dict>
@@ -321,6 +336,36 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>96D583BD-F244-4660-BD07-8F6BEF4ED277</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>renamed</string>
+						<key>outputlabel</key>
+						<string>Renamed</string>
+						<key>uid</key>
+						<string>8D1E6B40-C5A2-4F79-B318-7E0A9C4D52B1</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Skipped</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -368,10 +413,17 @@ https://github.com/chrisspiegl/alfred-rename</string>
 			<key>ypos</key>
 			<integer>185</integer>
 		</dict>
-		<key>96D583BD-F244-4660-BD07-8F6BEF4ED277</key>
+		<key>4F8C2A91-6B37-4E05-9D14-A2C7E5B083F6</key>
 		<dict>
 			<key>xpos</key>
 			<integer>780</integer>
+			<key>ypos</key>
+			<integer>185</integer>
+		</dict>
+		<key>96D583BD-F244-4660-BD07-8F6BEF4ED277</key>
+		<dict>
+			<key>xpos</key>
+			<integer>980</integer>
 			<key>ypos</key>
 			<integer>185</integer>
 		</dict>
@@ -391,8 +443,8 @@ https://github.com/chrisspiegl/alfred-rename</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>0.0.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/chrisspiegl/alfred-rename</string>
 </dict>
 </plist>
